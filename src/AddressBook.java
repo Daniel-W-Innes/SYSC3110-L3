@@ -10,12 +10,36 @@ public class AddressBook {
 		}
 	}
 	
-	public void removeBuddy(int index) {
-		if (index >= 0  && index < buddies.size()) {
-			buddies.get(index);
-		}
+	public BuddyInfo removeBuddy(int index) {
+			return buddies.remove(index);
 	}
 	
+	public boolean removeBuddy(BuddyInfo buddyInfo) {
+		return buddies.remove(buddyInfo);
+	}
+	
+	public BuddyInfo getBuddy(int index) {
+		return buddies.get(index);
+	}
+	
+	public ArrayList<BuddyInfo> getBuddies() {
+		return new ArrayList<>(buddies);
+	}
+	
+	
+	@Override
+    public String toString() {
+        return buddies.toString();
+    }
+	
+	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (null == o || getClass() != o.getClass()) return false;
+        AddressBook addressBook = (AddressBook) o;
+        return buddies == addressBook.getBuddies();
+    }
 
 	public static void main(String[] args) {
 		BuddyInfo buddy = new BuddyInfo("Tom", "Carleton", "613");

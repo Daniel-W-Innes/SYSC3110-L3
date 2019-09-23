@@ -1,13 +1,13 @@
 public class BuddyInfo {
 	private String name;
-	private String homeaddress;
-	private String phonenumer;
+	private String homeAddress;
+	private String phoneNumber;
 
 	public BuddyInfo (String name, String homeaddress, String phonenumer) {
 		super();
 		this.name = name;
-		this.homeaddress = homeaddress;
-		this.phonenumer = phonenumer;
+		this.homeAddress = homeaddress;
+		this.phoneNumber = phonenumer;
 	}
 
 	public String getName() {
@@ -18,19 +18,34 @@ public class BuddyInfo {
 		this.name = name;
 	}
 
-	public String getHomeaddress() {
-		return homeaddress;
+	public String getHomeAddress() {
+		return homeAddress;
 	}
 
 	public void setHomeaddress(String homeaddress) {
-		this.homeaddress = homeaddress;
+		this.homeAddress = homeaddress;
 	}
 
 	public String getPhonenumer() {
-		return phonenumer;
+		return phoneNumber;
 	}
 
 	public void setPhonenumer(String phonenumer) {
-		this.phonenumer = phonenumer;
+		this.phoneNumber = phonenumer;
 	}
+
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Phone Number: " + phoneNumber + ", Home Address: " + homeAddress;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (null == o || getClass() != o.getClass()) return false;
+        BuddyInfo buddyInfo = (BuddyInfo) o;
+        return getName().equals(buddyInfo.getName())  && getHomeAddress().equals(buddyInfo.getHomeAddress()) && getPhonenumer().equals(buddyInfo.getPhonenumer());
+    }
 }
