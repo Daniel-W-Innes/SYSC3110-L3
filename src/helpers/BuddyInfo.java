@@ -1,13 +1,13 @@
+package helpers;
 public class BuddyInfo {
 	private String name;
 	private String homeAddress;
 	private String phoneNumber;
 
-	public BuddyInfo (String name, String homeaddress, String phonenumer) {
-		super();
+	public BuddyInfo (String name, String homeAddress, String phoneNumber) {
 		this.name = name;
-		this.homeAddress = homeaddress;
-		this.phoneNumber = phonenumer;
+		this.homeAddress = homeAddress;
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getName() {
